@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/icons">
+    <qresource prefix="/">
         <file>icons/800px-Gnome-accessories-text-editor.svg.png</file>
         <file>icons/800px-Gnome-document-save.svg.png</file>
         <file>icons/800px-Gnome-edit-copy.svg.png</file>
