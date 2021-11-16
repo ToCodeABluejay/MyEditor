@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="icons.qrc">
-    <normaloff>:/icons/800px-Gnome-accessories-text-editor.svg.png</normaloff>:/icons/800px-Gnome-accessories-text-editor.svg.png</iconset>
+    <normaloff>:/icons/Gnome-accessories-text-editor.svg</normaloff>:/icons/Gnome-accessories-text-editor.svg</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -74,7 +74,7 @@
   <action name="actionNew">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/Gnome-document-new.svg.png</normaloff>:/icons/Gnome-document-new.svg.png</iconset>
+     <normaloff>:/icons/Gnome-document-new.svg</normaloff>:/icons/Gnome-document-new.svg</iconset>
    </property>
    <property name="text">
     <string>New</string>
@@ -86,7 +86,7 @@
   <action name="actionOpen">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/Gnome-document-open.svg.png</normaloff>:/icons/Gnome-document-open.svg.png</iconset>
+     <normaloff>:/icons/Gnome-document-open.svg</normaloff>:/icons/Gnome-document-open.svg</iconset>
    </property>
    <property name="text">
     <string>Open</string>
@@ -98,7 +98,7 @@
   <action name="actionSave">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/800px-Gnome-document-save.svg.png</normaloff>:/icons/800px-Gnome-document-save.svg.png</iconset>
+     <normaloff>:/icons/Gnome-document-save.svg</normaloff>:/icons/Gnome-document-save.svg</iconset>
    </property>
    <property name="text">
     <string>Save</string>
@@ -110,7 +110,7 @@
   <action name="actionSave_as">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/Gnome-document-save-as.svg.png</normaloff>:/icons/Gnome-document-save-as.svg.png</iconset>
+     <normaloff>:/icons/Gnome-document-save-as.svg</normaloff>:/icons/Gnome-document-save-as.svg</iconset>
    </property>
    <property name="text">
     <string>Save as...</string>
@@ -122,7 +122,7 @@
   <action name="actionUndo">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/800px-Gnome-edit-undo.svg.png</normaloff>:/icons/800px-Gnome-edit-undo.svg.png</iconset>
+     <normaloff>:/icons/Gnome-edit-undo.svg</normaloff>:/icons/Gnome-edit-undo.svg</iconset>
    </property>
    <property name="text">
     <string>Undo</string>
@@ -134,7 +134,7 @@
   <action name="actionRedo">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/800px-Gnome-edit-redo.svg.png</normaloff>:/icons/800px-Gnome-edit-redo.svg.png</iconset>
+     <normaloff>:/icons/Gnome-edit-redo.svg</normaloff>:/icons/Gnome-edit-redo.svg</iconset>
    </property>
    <property name="text">
     <string>Redo</string>
@@ -146,7 +146,7 @@
   <action name="actionCut">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/Gnome-edit-cut.svg.png</normaloff>:/icons/Gnome-edit-cut.svg.png</iconset>
+     <normaloff>:/icons/Gnome-edit-cut.svg</normaloff>:/icons/Gnome-edit-cut.svg</iconset>
    </property>
    <property name="text">
     <string>Cut</string>
@@ -158,7 +158,7 @@
   <action name="actionCopy">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/800px-Gnome-edit-copy.svg.png</normaloff>:/icons/800px-Gnome-edit-copy.svg.png</iconset>
+     <normaloff>:/icons/Gnome-edit-copy.svg</normaloff>:/icons/Gnome-edit-copy.svg</iconset>
    </property>
    <property name="text">
     <string>Copy</string>
@@ -170,7 +170,7 @@
   <action name="actionPaste">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/Gnome-edit-paste.svg.png</normaloff>:/icons/Gnome-edit-paste.svg.png</iconset>
+     <normaloff>:/icons/Gnome-edit-paste.svg</normaloff>:/icons/Gnome-edit-paste.svg</iconset>
    </property>
    <property name="text">
     <string>Paste</string>
