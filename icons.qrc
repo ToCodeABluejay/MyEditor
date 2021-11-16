@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/800px-Gnome-accessories-text-editor.svg.png</file>
+        <file>icons/800px-Gnome-document-save.svg.png</file>
+        <file>icons/800px-Gnome-edit-copy.svg.png</file>
+        <file>icons/800px-Gnome-edit-redo.svg.png</file>
+        <file>icons/800px-Gnome-edit-undo.svg.png</file>
+        <file>icons/Gnome-document-new.svg.png</file>
+        <file>icons/Gnome-document-open.svg.png</file>
+        <file>icons/Gnome-document-save-as.svg.png</file>
+        <file>icons/Gnome-edit-cut.svg.png</file>
+        <file>icons/Gnome-edit-paste.svg.png</file>
+    </qresource>
+</RCC>

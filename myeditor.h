@@ -7,6 +7,8 @@
 #include <QFile>
 #include <QTextStream>
 #include <Qsci/qsciscintilla.h>
+#include <cmath>
+#include <QSettings>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MyEditor; }
@@ -17,6 +19,8 @@ class MyEditor : public QMainWindow
     Q_OBJECT
 
 public:
+    void open_file(QString filename);
+    void load_settings();
     MyEditor(QWidget *parent = nullptr);
     ~MyEditor();
 
@@ -28,6 +32,8 @@ private slots:
     void save();
 
     bool unsaved_changes();
+
+    void resize_margins();
 
     void on_textEdit_textChanged();
 
@@ -60,5 +66,6 @@ private:
      *  for some reason further investigation required*/
     bool edited;
     bool just_opened = true;
+    QSettings settings;
 };
 #endif // MYEDITOR_H
