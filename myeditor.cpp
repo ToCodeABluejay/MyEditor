@@ -19,7 +19,7 @@ MyEditor::~MyEditor()
 void MyEditor::open_file(QString filename)
 {
     file.setFileName(filename);
-    file.open(QIODevice::ReadWrite);
+    file.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text);
     QTextStream in(&file);
     just_opened = true, edited = false;
     ui->textEdit->setText(in.readAll());
