@@ -12,7 +12,10 @@ int main(int argc, char *argv[])
     w.show();
 
     if (argc)
-        w.open_file(argv[1]);
+    {
+        w.set_filename(argv[1]);
+        w.open_file();
+    }
 
     w.load_settings();
 

@@ -16,13 +16,25 @@ MyEditor::~MyEditor()
     delete ui;
 }
 
-void MyEditor::open_file(QString filename)
+QString MyEditor::get_filename()
 {
-    file.setFileName(filename);
-    file.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text);
+    return filename;
+}
+
+void MyEditor::set_filename(QString fn)
+{
+    filename = fn;
+}
+
+void MyEditor::open_file()
+{
+    file.setFileName(get_filename());
+    file.open(QIODevice::ReadWrite);
+    set_writeable(file.isWritable());
     QTextStream in(&file);
     just_opened = true, edited = false;
     ui->textEdit->setText(in.readAll());
+    file.close();
     set_name();
 }
 
@@ -42,13 +54,17 @@ void MyEditor::load_settings()
 
 void MyEditor::open()
 {
-    QString of = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
-    open_file(of);
+    set_filename(QFileDialog::getOpenFileName(this, "Open File", QDir::homePath()).toUtf8());
+    open_file();
 }
 
 void MyEditor::save()
 {
+    file.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text);
+    /*QTextStream out(&file);
+    out << ui->textEdit->text().toUtf8();*/
     file.write(ui->textEdit->text().toUtf8());
+    file.close();
     just_opened = false;
     edited = false;
     set_name();
@@ -56,20 +72,20 @@ void MyEditor::save()
 
 void MyEditor::set_name()
 {
-    if (file.isOpen())
+    if (!get_filename().isEmpty())
     {
         if (just_opened)
-            setWindowTitle(file.fileName());
+            setWindowTitle(get_filename());
         else
         {
-            if (!file.isWritable() && edited)
-                setWindowTitle("* " + file.fileName() + " [Read-Only]");
-            else if (!file.isWritable())
-                setWindowTitle(file.fileName() + " [Read-Only]");
+            if (!is_writeable() && edited)
+                setWindowTitle("* " + get_filename() + " [Read-Only]");
+            else if (!is_writeable())
+                setWindowTitle(get_filename() + " [Read-Only]");
             else if (edited)
-                setWindowTitle("* " + file.fileName());
+                setWindowTitle("* " + get_filename());
             else
-                setWindowTitle(file.fileName());
+                setWindowTitle(get_filename());
         }
     }
     else if (edited)
@@ -98,6 +114,16 @@ void MyEditor::resize_margins()
 
     j=i*10;
     ui->textEdit->setMarginWidth(1,10+j);
+}
+
+bool MyEditor::is_writeable()
+{
+    return writeable;
+}
+
+void MyEditor::set_writeable(bool write)
+{
+    writeable = write;
 }
 
 void MyEditor::on_textEdit_textChanged()
@@ -133,11 +159,11 @@ void MyEditor::on_actionOpen_triggered()
 
 void MyEditor::on_actionSave_triggered()
 {
-    if (edited && file.isWritable())
+    if (edited && is_writeable())
         save();
-    else if (!file.isOpen())
+    else if (get_filename().isEmpty())
         on_actionSave_as_triggered();
-    else if (!file.isWritable())
+    else if (!is_writeable())
     {
         QMessageBox messageBox;
         messageBox.warning(0, "Read-Only!", "You do not have permission to write to this file! Try saving to a different file or open again with root privileges!");

@@ -19,12 +19,15 @@ class MyEditor : public QMainWindow
     Q_OBJECT
 
 public:
-    void open_file(QString filename);
+    void open_file();
     void load_settings();
+    void set_filename(QString fn);
     MyEditor(QWidget *parent = nullptr);
     ~MyEditor();
 
 private slots:
+    QString get_filename();
+
     void open();
 
     void set_name();
@@ -34,6 +37,10 @@ private slots:
     bool unsaved_changes();
 
     void resize_margins();
+
+    bool is_writeable();
+
+    void set_writeable(bool write);
 
     void on_textEdit_textChanged();
 
@@ -66,6 +73,8 @@ private:
      *  for some reason further investigation required*/
     bool edited;
     bool just_opened = true;
+    bool writeable;
+    QString filename;
     QSettings settings;
 };
 #endif // MYEDITOR_H
